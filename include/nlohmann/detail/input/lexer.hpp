@@ -482,8 +482,8 @@ class lexer : public lexer_base<BasicJsonType>
 
                 case 0x0A:
                 {
-                    error_message = "invalid string: control character U+000A (LF) must be escaped to \\u000A or \\n";
-                    return token_type::parse_error;
+                    add(current);
+                    break;
                 }
 
                 case 0x0B:
